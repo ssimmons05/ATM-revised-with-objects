@@ -19,8 +19,45 @@ Account.prototype.checkPin = function() {
 - Need an object array to hold the different error messages
 - Method for getting and displaying the right messages
 */
+class Account {
+    constructor (Pin, balance) {
+        this.Pin = Pin,
+        this.balance = balance,
+    }
+    checkPin() {
+        if (this.Pin === localStorage.Pin) {
+        return document.getElementById("display").innerHTML = balance;
+        }
+    }
+    
+    login() {
+                
+        this.accounts= JSON.parse(localStorage.getItem("accounts"));
+        let flag = false;
+        for(let i=0; i < this.accounts.length; i++) {
+            if (this.userPin == this.accounts[i].pin){
+                flag = true;
+                return true;
+            } else {
+                alert("Invalid PIN");
+            }
+        }
+    }
 
-let account = {
+    pinExists(userPin) {
+        this.userPin = prompt("Enter PIN");
+        let isFound = this.pinExists(userPin);
+        }
+    }
+
+let atm = new Account();
+
+let userPin = prompt ("Enter PIN");
+
+
+
+
+/*let account = {
     PIN: '',
     balance: 0,
     checkPin: function() {
@@ -63,3 +100,4 @@ const alertArray = [
 
     };
 ]
+*/

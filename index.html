@@ -6,6 +6,56 @@
     <title>ATM Machine</title>
 </head>
 <body>
-    
+    <a href="#" onclick="atm.login()">Login</a>
+    <script>
+
+/*const acct1 = {
+    pin: "123",
+    balance: "500"
+};
+
+const acct2 = {
+    pin: "321",
+    balance: "5000"
+};
+
+const arr = [acct1, acct2];
+console.log(arr);
+const str = JSON.stringify(arr);
+console.log(str);
+localStorage.setItem("accounts", str);
+const obj = JSON.parse(localStorage.getItem("accounts"));
+console.log(obj);
+*/
+
+
+        class Atm {
+            constructor() {
+
+            }
+            login() {
+                
+                this.accounts= JSON.parse(localStorage.getItem("accounts"));
+                let flag = false;
+                for(let i=0; i < this.accounts.length; i++) {
+                    if (this.userPin == this.accounts[i].pin){
+                        flag = true;
+                        return true;
+                    } else {
+                        alert("Invalid PIN");
+                    }
+                }
+            }
+            pinExists(userPin) {
+                this.userPin = prompt("Enter PIN");
+                let isFound = this.pinExists(userPin);
+                }
+        }
+        let atm = new Atm();
+
+        let userPin = prompt ("Enter PIN")
+
+
+    </script>
 </body>
 </html>
